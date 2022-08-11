@@ -1,0 +1,47 @@
+{
+  "type": {
+    "prefix": ["t", "ty", "type", "typ"],
+    "body": ["type $1 = "],
+    "description": ["@param 1 — type name"]
+  },
+  "matrix 4x4": {
+    "prefix": ["mat", "m", "44", "m4"],
+    "body": ["mat4x4<${1:f32}>"],
+    "description": ["@param 1 — number type"]
+  },
+  "binding group uniform value": {
+    "prefix": ["u", "uniform"],
+    "body": ["@group(0) @binding(0) var<uniform> $1: "],
+    "description": ["@param 1 — group number"]
+  },
+  "@group": {
+    "prefix": ["g", "group", "grou", "gr", "@g", "@gr", "gro", "@gro"],
+    "body": ["@group(${1:0}) "],
+    "description": ["@param 1 — group number"]
+  },
+  "@binding": {
+    "prefix": ["bi"],
+    "body": ["@binding(${1:0}) "],
+    "description": ["@param 1 — binding number"]
+  },
+  "@builtin": {
+    "prefix": ["bu"],
+    "body": ["@group($1) "],
+    "description": ["@param 1 — builtin number"]
+  },
+  "@location": {
+    "prefix": ["lo"],
+    "body": ["@location(${1:0}) "],
+    "description": ["@param 1 — location number"]
+  },
+  "struct body": {
+    "prefix": ["s", "st", "str", "struct"],
+    "body": ["struct ${1:structName} {", "", "}"],
+    "description": ["@param structName — struct name"]
+  },
+  "shader function": {
+    "prefix": ["f", "fn", "main"],
+    "body": ["fn ${1:main}() -> $2 {", "", "}"],
+    "description": ["@param structName — shader name"]
+  }
+}

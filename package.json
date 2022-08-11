@@ -1,0 +1,39 @@
+{
+  "name": "wgsl",
+  "displayName": "wgsl",
+  "description": "WebGPU shading language",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.70.0"
+  },
+  "categories": [
+    "Programming Languages"
+  ],
+  "contributes": {
+    "languages": [
+      {
+        "id": "wgsl",
+        "aliases": [
+          "wgsl"
+        ],
+        "extensions": [
+          ".wgsl"
+        ],
+        "configuration": "./language-configuration.json"
+      }
+    ],
+    "grammars": [
+      {
+        "language": "wgsl",
+        "scopeName": "source.wgsl",
+        "path": "./syntaxes/wgsl.tmLanguage.json"
+      }
+    ],
+    "snippets": [
+      {
+        "language": "wgsl",
+        "path": "./snippets.json"
+      }
+    ]
+  }
+}
