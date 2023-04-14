@@ -1,4 +1,24 @@
 {
+  "int scalar": {
+    "prefix": ["i", "i3", "i32"],
+    "body": ["i32"],
+    "description": ["a signed, two’s complement, 32-bit integer."]
+  },
+  "unsigned int scalar": {
+    "prefix": ["u", "u3", "u32"],
+    "body": ["u32"],
+    "description": ["an unsigned 32-bit integer."]
+  },
+  "float scalar": {
+    "prefix": ["f", "f3", "f32"],
+    "body": ["f32"],
+    "description": ["an IEEE-754 binary32, floating point."]
+  },
+  "boolean scalar": {
+    "prefix": ["b", "bo", "boo", "bool"],
+    "body": ["f32"],
+    "description": ["boolean."]
+  },
   "type": {
     "prefix": ["t", "ty", "type", "typ"],
     "body": ["type $1 = "],
@@ -9,9 +29,15 @@
     "body": ["mat4x4<${1:f32}>"],
     "description": ["@param 1 — number type"]
   },
+
   "binding group uniform value": {
-    "prefix": ["u", "uniform"],
+    "prefix": ["uvar"],
     "body": ["@group(0) @binding(0) var<uniform> $1: "],
+    "description": ["@param 1 — group number"]
+  },
+  "binding group storage value": {
+    "prefix": ["svar"],
+    "body": ["@group(${1:0}) @binding(${2:0}) var<uniform> $3: "],
     "description": ["@param 1 — group number"]
   },
   "@group": {
@@ -40,8 +66,13 @@
     "description": ["@param structName — struct name"]
   },
   "shader function": {
-    "prefix": ["f", "fn", "main"],
+    "prefix": ["main"],
     "body": ["fn ${1:main}() -> $2 {", "", "}"],
+    "description": ["@param structName — shader name"]
+  },
+  "function": {
+    "prefix": ["fun", "fn"],
+    "body": ["fn ${1:name}(${2:params}:${3:type}) -> ${4:returnType} {", "", "}"],
     "description": ["@param structName — shader name"]
   }
 }
